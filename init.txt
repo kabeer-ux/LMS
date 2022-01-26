@@ -1,0 +1,86 @@
+
+Student
+
+id
+name
+program
+general info (fname, email, phone, whatsapp)
+password
+pic
+regno
+rollno
+
+--------------
+//////////////
+--------------
+
+student
+--------------
+id
+first name
+Last name
+father name
+email (username)
+phone
+whatsapp
+address
+city_id
+
+
+///////////////////
+
+city
+--------------
+id
+name
+
+
+////////////
+
+student_program
+-----------
+id
+student_id
+program_id
+
+
+student k table ko normalize kiya jana hy abi
+
+
+//////////////////////////////////////////
+//////////////////////////////////////////
+//////////////////////////////////////////
+//////////////////////////////////////////
+//////////////////////////////////////////
+
+
+
+student
+--------------
+id
+first name
+Last name
+father name
+email (username)
+phone
+whatsapp
+address
+city_id
+program_id
+password
+active
+addon
+
+06-jan-2021
+
+
+
+
+
+
+
+
+
+
+
+

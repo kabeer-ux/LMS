@@ -1,0 +1,108 @@
+* {
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	background-color: #8000FF !important;
+	position: relative !important;
+	height: 100vh !important;
+}
+
+.page {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border:0px solid red;
+	width: 902px;
+	overflow: hidden;
+}
+.page .left {
+	float: left;
+	width: 450px;
+	height: 450px;
+	border:0px solid red;
+	padding:50px;
+}
+.page .left img {
+	width: 100%;
+}
+
+.page .right {
+	float: right;
+	width: 450px;
+	height: 450px;
+	border:0px solid red;
+	padding:100px 20px;
+}
+
+.right .card form h2 {
+	color: white;
+	background-color: transparent !important;
+	text-transform: uppercase;
+	font-size: 36px;
+}
+
+.page .right .card {
+	border:0px solid red;
+	height: 250px;
+	background-color: transparent !important;
+}
+
+.page .right .card .form-group {
+	height: 60px;
+	border:0px solid red;
+	padding: 10px 0;
+}
+.page .right .card .form-group label {
+	height: 25px;
+	border:0px solid red;
+	display: block;
+	color: white;
+	text-transform: capitalize;
+	font-size: 18px;
+	line-height: 20px;
+}
+.page .right .card .form-group input[type='text'],
+.page .right .card .form-group input[type='password'] {
+	height: 25px;
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	outline:none;
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom:1px solid #FF00FF;
+	color: #ccc;
+	font-size: 14px;
+}
+.page .right .card button[type='submit'] {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	background-color: #FF00FF;
+	outline: none;
+	border:0;
+	transition: 0.2s;
+}
+.page .right .card button[type='submit']:hover {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	background-color: #C800C8;
+	outline: none;
+	border:0;
+	box-shadow: 0 0 5px #FF00FF;
+}
