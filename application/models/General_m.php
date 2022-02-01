@@ -58,6 +58,16 @@ class General_m extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	public function show_2_join_mystar($id, $tbl_name_1, $tbl_name_2, $tbl_name_3, $key, $key1, $mystar, $where)
+	{
+		$this->db->select($mystar);
+		$this->db->from($tbl_name_1);
+		$this->db->join($tbl_name_2, $tbl_name_1.'.'.$key.' = '.$tbl_name_2.'.'.$key);
+		$this->db->join($tbl_name_3, $tbl_name_2.'.'.$key1.' = '.$tbl_name_3.'.'.$key1);
+		$this->db->where($tbl_name_3.'.'.$where, $id);
+		return $this->db->get()->result();
+	}
+
 	public function insert($value, $tbl_name)
 	{
 		$this->db->insert($tbl_name, $value);

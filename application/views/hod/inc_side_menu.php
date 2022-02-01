@@ -2,8 +2,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo base_url('hod/Home/index'); ?>" class="brand-link">
-      <img src="<?php echo base_url('assets/media/logo/icon2.png'); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">HOD Admin</span>
+      <img src="<?php echo base_url('assets/media/logo/icon2.png'); ?>" alt="hodLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">HOD hod</span>
     </a>
 
     <!-- Sidebar -->
@@ -37,8 +37,33 @@
             </a>
           </li>
 
- 
-         
+          <li class="nav-item">
+            <a href="<?php echo base_url('hod/Hod_Session/index'); ?>" class="nav-link">
+              <i class="nav-icon fa fa-bullhorn" aria-hidden="true"></i>
+              <p>
+                Session
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?php echo base_url('hod/Term/index'); ?>" class="nav-link">
+              <i class="nav-icon fa fa-book" aria-hidden="true"></i>
+              <p>
+                Term
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?php echo base_url('hod/Hod_class/index'); ?>" class="nav-link">
+              <i class="nav-icon fa fa-book" aria-hidden="true"></i>
+              <p>
+                Class
+              </p>
+            </a>
+          </li>
+     
 
           
             
