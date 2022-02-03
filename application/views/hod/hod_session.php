@@ -92,7 +92,7 @@ include_once "inc_side_menu.php";
                         <?php //} ?>
                       </td> -->
                       <td>
-                        <a class="btn btn-primary btn-sm" href="<?php //echo base_url('admin/Department/dep_edit/'.$showv->department_id); ?>">
+                        <a class="btn btn-primary btn-sm" href="<?php echo base_url('hod/Hod_Session/session_edit/'.$showv->session_id); ?>">
                          <i class="fas fa-edit"></i>
                         </a>
                       </td>

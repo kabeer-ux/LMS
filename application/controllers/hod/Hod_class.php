@@ -103,6 +103,45 @@ class Hod_class extends CI_Controller {
 		// }
 	}
 
+	public function class_edit($id1)
+	{	
+		global $id;
+		$data['show'] = $this->General_m->show_where($id1, 'class', 'class_id');
+		$data['show_term'] = $this->General_m->show_where($id, 'term', 'hod_id');
+		$data['show_c'] = $this->General_m->show_2_join_mystar($id, 'course', 'program', 'hod', 'system_id', 'department_id', 'course.name, course.course_id', 'hod_id');
+		$data['show_hod'] = $this->General_m->show_1_join($id, 'hod', 'faculty', 'faculty_id', 'hod_id');
+		$data['show_pro'] = $this->General_m->show_1_join($id, 'hod', 'program', 'department_id', 'hod_id'); 
+
+		$this->load->view('hod/class_edit_v', $data);
+	}
+
+	public function class_update_do($id)
+	{ 
+		$course_id = $this->input->post('course_id'); 
+		$complete = $this->input->post('complete');
+		$term_id = $this->input->post('term_id');
+		$active = $this->input->post('active');
+		$start = $this->input->post('start');
+		$desc = $this->input->post('desc');
+
+		$data = array(
+			'course_id' 			=> $course_id,
+			'complete' 				=> $complete,
+			'term_id' 				=> $term_id,
+			'active' 				=> $active,
+			'start' 	    		=> $start,
+			'class_description' 	=> $desc
+		);
+
+		echo '<pre>';
+		var_dump($data);
+		echo '</pre>';
+
+		$this->General_m->update($id, $data, 'class', 'class_id');
+		redirect('hod/hod_class/index');
+
+	}
+
 	public function check_sesid($sesid)
 	{
 		if($sesid == 0) {

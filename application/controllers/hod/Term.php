@@ -27,14 +27,15 @@ class Term extends CI_Controller {
 		}
 
 
-		// if($id1 != NULL){
+		if($id1 != NULL){
 		// 	// $data['show'] = $this->General_m->show_where($id, 'term', 'program_id'); 
-		// $data['show_click'] = $this->General_m->show_query("SELECT term.session_id, session.session_id, session.session_name, term.hod_id, program_id FROM term inner join session on term.session_id = session.session_id where session.program_id = $id1");
-		// }else{
+		// $data['show_click'] = $this->General_m->show_query("SELECT term.session_id, session.session_id, session.session_name, term.hod_id, program_id FROM term inner join session on term.session_id = session.session_id where session.hod_id = $id AND session.program_id = $id1");
+		}else{
 
-		// }
+		}
 		// $data['show_click'] = $this->General_m->show_1_join($id, 'term', 'session', 'session_id', 'hod_id'); 
-
+		// $data['show'] = $this->General_m->show_1_join($id1, 'term', 'session', 'session_id', 'session_id');
+		// $data['show'] = $this->General_m->show_query("SELECT * FROM term where hod_id = $id order by session_id");
 		$data['show'] = $this->General_m->show_where($id, 'term', 'hod_id');
 		$data['show_ses'] = $this->General_m->show_where($id, 'session', 'hod_id');
 		$data['show_hod'] = $this->General_m->show_1_join($id, 'hod', 'faculty', 'faculty_id', 'hod_id');
@@ -92,6 +93,40 @@ class Term extends CI_Controller {
 			$this->form_validation->set_message('check_sesid', 'Select the Session');
 			return FALSE;
 		}
+	}
+
+	public function term_edit($id1)
+	{	
+		global $id;
+		$data['show'] = $this->General_m->show_where($id1,'term','term_id');
+		$data['show_ses'] = $this->General_m->show_where($id, 'session', 'hod_id');
+		$data['show_hod'] = $this->General_m->show_1_join($id, 'hod', 'faculty', 'faculty_id', 'hod_id'); 
+		$data['show_pro'] = $this->General_m->show_1_join($id1, 'session', 'program', 'program_id', 'session_id');
+		$this->load->view('hod/term_edit_v',$data);
+	}
+
+	public function term_update_do($id)
+	{ 
+		$desc = $this->input->post('desc'); 
+		$hodid = $this->input->post('hodid'); 
+		$sesid = $this->input->post('sesid');
+		$term_name = $this->input->post('term_name');
+		$ease_name = $this->input->post('ease_name');
+
+		$data = array(
+				'hod_id' 			=> $hodid,
+				'session_id' 		=> $sesid,
+				'term_name' 		=> $term_name,
+				'ease_name' 		=> $ease_name,
+				'description' 		=> $desc
+			);
+
+		echo '<pre>';
+		var_dump($data);
+		echo '</pre>';
+
+		$this->General_m->update($id, $data, 'term', 'term_id');
+		redirect('hod/term/index');
 	}
 
 	public function logout()

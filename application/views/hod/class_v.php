@@ -99,7 +99,7 @@ include_once "inc_side_menu.php";
                       </td>
                       <td> <?php echo $showv->class_description; ?> </td>
                       <td>
-                        <a class="btn btn-primary btn-sm" href="<?php //echo base_url('admin/Department/dep_edit/'.$showv->department_id); ?>">
+                        <a class="btn btn-primary btn-sm" href="<?php echo base_url('hod/Hod_class/class_edit/'.$showv->class_id); ?>">
                          <i class="fas fa-edit"></i>
                         </a>
                       </td>
